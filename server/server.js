@@ -7,6 +7,7 @@ app.use(express.static(path.join(__dirname, "../public")))
 
 app.get('/order/:id', (req, res) => {
     let id = req.params.id;
-    res.send((Number(id)+5).toString())
+    let email = req.query.email;
+    res.send(`${Number(id)+5} email is: ${email}`)
 })
 app.listen(3000);
